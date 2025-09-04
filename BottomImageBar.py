@@ -24,6 +24,12 @@ class BottomImageBar(QWidget):
             QPixmap("05_znak_-siatka_uproszczony_kolor_biale_tlo-1.png").scaled(300, 120, Qt.KeepAspectRatio,
                                                                                 Qt.SmoothTransformation))
 
+        bottom_img3 = QLabel()
+        bottom_img3.setText("Finansowane ze środków Ministra Nauki i Szkolnictwa Wyższego w ramach zadania zleconego pn. \n „Lubelska Unia Cyfrowa – Wykorzystanie rozwiązań cyfrowych i sztucznej inteligencji w medycynie \n – projekt badawczy\"")
+        bottom_img3.setAlignment(Qt.AlignCenter)
+
         bottom_layout.addWidget(bottom_img1, alignment=Qt.AlignLeft | Qt.AlignVCenter)
+        bottom_layout.addStretch(1)
+        bottom_layout.addWidget(bottom_img3, alignment=Qt.AlignRight | Qt.AlignVCenter)
         bottom_layout.addStretch(1)
         bottom_layout.addWidget(bottom_img2, alignment=Qt.AlignRight | Qt.AlignVCenter)
