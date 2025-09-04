@@ -1,9 +1,10 @@
-from PyQt5 import QtGui, QtCore
+from PyQt5 import QtGui, QtCore, Qt
 
 from PyQt5.QtWidgets import (
-    QWidget, QPushButton, QVBoxLayout, QLabel, QFileDialog
+    QWidget, QPushButton, QVBoxLayout, QLabel, QFileDialog, QHBoxLayout
 )
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 
 import InformationButton
 
@@ -14,6 +15,7 @@ class ImageLoader(QWidget):
 
         # Layout
         self.layout = QVBoxLayout()
+        self.inner_layout = QHBoxLayout()
 
         # Przycisk do wczytywania obrazu
         self.load_button = QPushButton("Wczytaj obraz do analizy")
@@ -30,16 +32,7 @@ class ImageLoader(QWidget):
         #Tutaj przycisk z informacją
 
         self.info_button = InformationButton.InformationButton(text="",message="Proszę wczytac obraz OPTOS. Dosępne rozszerzenia obrazu to: *.png *.jpg *.jpeg *.bmp *.gif ", popup_title="Informacja")
-        # self.info_button.setIcon(QtGui.QIcon('inf.png'))
-        # self.info_button.setFixedSize(30, 30)
-        # self.info_button.clicked.connect(self.show_info)
-        # self.info_button.setStyleSheet("""
-        #             font-size: 18px;
-        #             color: #FFFFFF;
-        #             font-weight: bold;
-        #             # background-color: #e16e38;
-        #             border-radius: 6px;
-        #         """)
+
 
         # Etykieta do wyświetlania obrazu
         self.image_label = QLabel("Tutaj pojawi się obraz")
@@ -48,9 +41,13 @@ class ImageLoader(QWidget):
         # self.image_label.resize(300, 300)
 
         # Dodajemy widgety do layoutu
-        self.layout.addWidget(self.load_button)
-        self.layout.addWidget(self.info_button)
+        self.inner_layout.addWidget(self.load_button)
+        self.inner_layout.addWidget(self.info_button)
+
+        self.layout.addLayout(self.inner_layout)
         self.layout.addWidget(self.image_label)
+        self.layout.setAlignment(Qt.AlignHCenter)
+
 
 
         self.setLayout(self.layout)

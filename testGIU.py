@@ -4,12 +4,14 @@ from PyQt5 import QtGui, QtCore
 
 import sys
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QDialog, QDialogButtonBox, QHBoxLayout, QFileDialog
+    QApplication, QWidget, QPushButton, QVBoxLayout, QLabel, QDialog, QDialogButtonBox, QHBoxLayout, QFileDialog,
+    QRadioButton
 )
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
 import ImageLoader, CustomPopup
+from RadioButtons import RadioButtonGroup
 
 
 class MyWindow(QWidget):
@@ -59,6 +61,8 @@ class MyWindow(QWidget):
         # Image loader
         image_layout = ImageLoader.ImageLoader()
         center_layout.addWidget(image_layout)
+        button_layout = RadioButtonGroup()
+        center_layout.addWidget(button_layout)
 
         # przykładowy przycisk „?” w środku
         self.button = QPushButton("?")
