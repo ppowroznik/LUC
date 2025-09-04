@@ -1,17 +1,18 @@
 from PyQt5.QtWidgets import QPushButton
+from PyQt5 import QtGui
 import CustomPopup
 
 class InformationButton(QPushButton):
     def __init__(self, text="Ala", message="Default message", parent=None):
         super().__init__(text, parent)
-        self.setFixedSize(22, 22)
+        self.setFixedSize(30, 30)
         self.message = message
+        self.setIcon(QtGui.QIcon('inf.png'))
         self.clicked.connect(self.show_custom_popup)
         self.setStyleSheet("""
             font-size: 18px;
             color: #FFFFFF;
             font-weight: bold;
-            background-color: #e16e38;
             border-radius: 6px;
         """)
 
