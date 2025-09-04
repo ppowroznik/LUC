@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
-import ImageLoader, CustomPopup, TopImageBar, BottomImageBar
+import ImageLoader, CustomPopup, TopImageBar, BottomImageBar, RadioButtons
 
 
 class MyWindow(QWidget):
@@ -36,6 +36,8 @@ class MyWindow(QWidget):
         # Image loader
         image_layout = ImageLoader.ImageLoader()
         center_layout.addWidget(image_layout)
+        button_layout = RadioButtons.RadioButtonGroup()
+        center_layout.addWidget(button_layout)
 
         center_layout.addWidget(center_title, alignment=Qt.AlignTop | Qt.AlignHCenter)
         center_layout.addStretch(1)
