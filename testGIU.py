@@ -9,34 +9,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
-import ImageLoader
-
-
-class CustomPopup(QDialog):
-    def __init__(self, message, parent=None):
-        super().__init__(parent)
-        self.setWindowTitle("Mój Popup")
-        self.setModal(True)
-
-        layout = QVBoxLayout()
-        label = QLabel(message)
-        label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(label)
-
-        buttons = QDialogButtonBox(QDialogButtonBox.Ok)
-        buttons.accepted.connect(self.accept)
-        layout.addWidget(buttons)
-
-        self.setLayout(layout)
-        self.resize(250, 120)
-        self.setStyleSheet("""
-            QDialog { background-color: #f5f5f7; border-radius: 10px; }
-            QLabel { font-size: 14px; color: #7d7d7d; }
-            QPushButton { background-color: #e16e38; color: white; padding: 6px 12px; border-radius: 6px; }
-            QPushButton:hover { background-color: #c5744e; }
-        """)
-#
-
+import ImageLoader, CustomPopup
 
 
 class MyWindow(QWidget):
@@ -130,7 +103,7 @@ class MyWindow(QWidget):
         self.resize(1200, 800)
 
     def show_custom_popup(self):
-        popup = CustomPopup("To jest mój własny popup z przyciskiem OK", self)
+        popup = CustomPopup.CustomPopup("To jest mój własny popup z przyciskiem OK", self)
         popup.exec_()
 
 
