@@ -29,7 +29,7 @@ class ImageLoader(QWidget):
 
         #Tutaj przycisk z informacją
 
-        self.info_button = InformationButton.InformationButton(text="",message="Text do wyswietlenia")
+        self.info_button = InformationButton.InformationButton(text="",message="Proszę wczytac obraz OPTOS. Dosępne rozszerzenia obrazu to: *.png *.jpg *.jpeg *.bmp *.gif ", popup_title="Informacja")
         # self.info_button.setIcon(QtGui.QIcon('inf.png'))
         # self.info_button.setFixedSize(30, 30)
         # self.info_button.clicked.connect(self.show_info)

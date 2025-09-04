@@ -5,9 +5,10 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt
 
 class CustomPopup(QDialog):
-    def __init__(self, message, parent=None):
+    def __init__(self, message, popup_title="", parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Mój Popup")
+        self.popup_title = popup_title
+        self.setWindowTitle(popup_title)
         self.setModal(True)
 
         layout = QVBoxLayout()

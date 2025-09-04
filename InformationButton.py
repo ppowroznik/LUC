@@ -3,10 +3,11 @@ from PyQt5 import QtGui
 import CustomPopup
 
 class InformationButton(QPushButton):
-    def __init__(self, text="Ala", message="Default message", parent=None):
+    def __init__(self, text="Ala", message="Default message", popup_title="", parent=None):
         super().__init__(text, parent)
         self.setFixedSize(30, 30)
         self.message = message
+        self.popup_title = popup_title
         self.setIcon(QtGui.QIcon('inf.png'))
         self.clicked.connect(self.show_custom_popup)
         self.setStyleSheet("""
@@ -18,5 +19,5 @@ class InformationButton(QPushButton):
 
     def show_custom_popup(self):
         main_window = self.window()
-        popup = CustomPopup.CustomPopup(self.message, main_window)
+        popup = CustomPopup.CustomPopup(self.message, self.popup_title, main_window)
         popup.exec_()
