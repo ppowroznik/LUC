@@ -8,7 +8,7 @@ class InformationButton(QPushButton):
         self.setFixedSize(30, 30)
         self.message = message
         self.popup_title = popup_title
-        self.setIcon(QtGui.QIcon('inf.png'))
+        self.setIcon(QtGui.QIcon('inf_color.png'))
         self.clicked.connect(self.show_custom_popup)
         self.setStyleSheet("""
             font-size: 18px;
