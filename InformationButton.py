@@ -3,7 +3,7 @@ from PyQt5 import QtGui
 import CustomPopup
 
 class InformationButton(QPushButton):
-    def __init__(self, text="Ala", message="Default message", popup_title="", parent=None):
+    def __init__(self, text="", message="Default message", popup_title="", parent=None):
         super().__init__(text, parent)
         self.setFixedSize(30, 30)
         self.message = message
