@@ -29,9 +29,9 @@ class MyWindow(QWidget):
         center_layout.setContentsMargins(16, 16, 16, 16)
         center_layout.setSpacing(12)
 
-        center_title = QLabel("Środkowy obszar – tu możesz dodawać własne widżety")
-        center_title.setStyleSheet("color: #7d7d7d; font-size: 16px;")
-        center_title.setAlignment(Qt.AlignHCenter)
+        # center_title = QLabel("Środkowy obszar – tu możesz dodawać własne widżety")
+        # center_title.setStyleSheet("color: #7d7d7d; font-size: 16px;")
+        # center_title.setAlignment(Qt.AlignHCenter)
 
         # Image loader
         image_layout = ImageLoader.ImageLoader()
@@ -39,7 +39,7 @@ class MyWindow(QWidget):
         button_layout = RadioButtons.RadioButtonGroup()
         center_layout.addWidget(button_layout)
 
-        center_layout.addWidget(center_title, alignment=Qt.AlignTop | Qt.AlignHCenter)
+        # center_layout.addWidget(center_title, alignment=Qt.AlignTop | Qt.AlignHCenter)
         center_layout.addStretch(1)
 
         # klucz: stretch=1 żeby środek wypełniał przestrzeń między top i bottom

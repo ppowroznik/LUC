@@ -37,6 +37,7 @@ class ImageLoader(QWidget):
         # Etykieta do wyświetlania obrazu
         self.image_label = QLabel("Tutaj pojawi się obraz")
         self.image_label.setScaledContents(True)  # Automatyczne skalowanie obrazu
+        self.image_label.setAlignment(Qt.AlignCenter)
         self.image_label.setFixedSize(300, 300)
         # self.image_label.resize(300, 300)
 
