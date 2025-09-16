@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 
-import ImageLoader, CustomPopup, TopImageBar, BottomImageBar, RadioButtons
+import ImageLoader, CustomPopup, TopImageBar, BottomImageBar, RadioButtons, InformationButton
 
 
 class MyWindow(QWidget):
@@ -33,7 +33,9 @@ class MyWindow(QWidget):
         # center_title.setStyleSheet("color: #7d7d7d; font-size: 16px;")
         # center_title.setAlignment(Qt.AlignHCenter)
 
-        # Image loader
+        # button_info = InfoButton.InfoAboutApp()
+        button_info = InformationButton.InformationButton(text="",message="Proszę wczytac obraz OPTOS. Dosępne rozszerzenia obrazu to: *.png *.jpg *.jpeg *.bmp *.gif ", popup_title="Informacja", icon_image="tutorial.png")
+        center_layout.addWidget(button_info)
 
         image_layout = ImageLoader.ImageLoader()
         center_layout.addWidget(image_layout)
