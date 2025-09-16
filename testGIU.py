@@ -34,6 +34,7 @@ class MyWindow(QWidget):
         # center_title.setAlignment(Qt.AlignHCenter)
 
         # Image loader
+
         image_layout = ImageLoader.ImageLoader()
         center_layout.addWidget(image_layout)
         button_layout = RadioButtons.RadioButtonGroup()
