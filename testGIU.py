@@ -34,7 +34,29 @@ class MyWindow(QWidget):
         # center_title.setAlignment(Qt.AlignHCenter)
 
         # button_info = InfoButton.InfoAboutApp()
-        button_info = InformationButton.InformationButton(text="",message="Proszę wczytac obraz OPTOS. Dosępne rozszerzenia obrazu to: *.png *.jpg *.jpeg *.bmp *.gif ", popup_title="Informacja", icon_image="tutorial.png")
+        message = """
+        Aplikacja ma za zadanie detekcji cech charakterystycznych chorób rzadkich oczu: 
+        retinopatii barwinkowej (ang. Retinitis Pigmentosa) oraz dystrofii czopkowo-pręcikowej (ang. Cone-Rod Dystrophy). 
+        Aplikacja także rozpoznaje obrazy, które nie zawierają wyżej wymienionych objawów.
+        
+        Retinopatia barwnikowa jest genetycznie uwarunkowaną choroba oczu, 
+        charakteryzująca się postępującym uszkodzeniem i degeneracją fotoreceptorów siatkówki – pręcików i czopków. 
+        Proces ten prowadzi do stopniowej utraty widzenia. Zaczyna się od zmniejszenia widzenia peryferyjnego, 
+        a następnie obejmuje centralne pole widzenia. 
+        
+        Dystrofia czopkowo-pręcikowa jest grupą postepujących, wrodzonych chorób siatkówki. 
+        Zmiany chorobowe dotyczą przede wszystkim czopków, odpowiedzialnych za widzenie dzienne, 
+        rozpoznawanie barw i widzenie precyzyjne, a także w mniejszym zakresie pręcików, odpowiedzialnych za widzenie zmierzchowe. 
+        Objawy towarzyszące chorobie to oczopląs, postępujący spadek ostrości wzroku, nadwrażliwość na światło, 
+        zaburzenia rozróżniania barw oraz ubytek w centralnej części pola widzenia. 
+
+        Wykonanie analizy w celu zidentyfikowania chorób rzadkich oczu składa się z następujących czynności:
+        1.	Wczytania szerokokątnego obrazu powierzchni siatkówki.
+        2.	Wybrania modelu uczenia maszynowego na podstawie którego zostanie przeprowadzona analiza.
+        3.	Uzyskania wskazówek dotyczących.
+        """
+
+        button_info = InformationButton.InformationButton(text="",message=message, popup_title="Samouczek", icon_image="tutorial.png")
         center_layout.addWidget(button_info)
 
         image_layout = ImageLoader.ImageLoader()
